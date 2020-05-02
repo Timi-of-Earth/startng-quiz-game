@@ -152,6 +152,24 @@ p {
   pointer-events: none;
 }
 
+@media (max-height: 500px) {
+  body {
+    height: 100vh;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  p.score-container {
+    margin: 130px 0 16px;
+  }
+  .container {
+    margin: 0 0 16px;
+    /* display: none; */
+  }
+}
+
 @media (max-height: 400px) {
   body {
     height: 100vh;
@@ -163,6 +181,23 @@ p {
   }
   p.score-container {
     margin: 200px 0 16px;
+  }
+  .container {
+    margin: 0 0 16px;
+  }
+}
+
+@media (max-height: 320px) {
+  body {
+    height: 100vh;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  p.score-container {
+    margin: 15rem 0 16px;
   }
   .container {
     margin: 0 0 16px;
