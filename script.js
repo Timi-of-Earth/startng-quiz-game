@@ -6,6 +6,7 @@ const startBtn = document.getElementById("start-btn"),
   questionContainer = document.getElementById("question-container"),
   optionContainer = document.getElementById("option-container"),
   navBar = document.getElementById("nav-bar"),
+  scoreContainer = document.getElementById("score-container"),
   scoreValue = document.getElementById("score");
 
 // array of questions
@@ -57,13 +58,13 @@ let currentScore = 0;
 
 // start game function
 function startGame() {
-  
   optionContainer.classList.remove("clicked");
   nextBtn.classList.remove("hide");
   !endPage.classList.contains("hide") ? endPage.classList.add("hide") : false;
   startPage.classList.add("hide");
   questionContainer.classList.remove("hide");
   optionContainer.classList.remove("hide");
+  scoreContainer.classList.remove("hide");
   navBar.classList.remove("hide");
   currentScore = 0;
   scoreValue.innerText = currentScore;
@@ -135,7 +136,7 @@ function endGame() {
   questionContainer.innerHTML = ``;
   optionContainer.innerHTML = ``;
   nextBtn.classList.add("hide");
-  // navBar.classList.add("hide");
+  scoreContainer.classList.add("hide");
   endPage.classList.remove("hide");
   endPage.innerHTML = `
   <h1>Game Over!</h1>
