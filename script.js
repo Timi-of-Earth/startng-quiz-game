@@ -139,7 +139,7 @@ function showQuestion() {
   let currentQuestion = document.createElement("p");
   currentQuestion.innerText = data[counter].question;
   questionContainer.appendChild(currentQuestion);
-  for (let option of data[counter].options) {
+  for (let option of data[counter].options.sort(() => Math.random() - 0.5)) {
     let btn = document.createElement("button");
     btn.innerText = option;
     btn.onclick = selectAnswer;
