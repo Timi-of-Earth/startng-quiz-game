@@ -66,6 +66,7 @@ nav p {
   justify-content: center;
   position: relative;
   width: 90%;
+  max-width: 500px;
   border-radius: 1em;
   box-shadow: 0 0 2px ;
   padding: 1em;
