@@ -5,6 +5,12 @@
   font-family: "Lato", sans-serif;
 }
 
+:root {
+  /* --button-color: hsl(197, 91%, 31%); */
+  --button-color: hsl(256, 44%, 43%);
+  --navbar-color: hsl(256, 44%, 43%);
+}
+
 html {
   margin: 0;
 }
@@ -17,8 +23,36 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  /* background-color: rgba(0, 0, 0, 0.3); */
   margin: 0;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: var(--navbar-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+nav h4 {
+  /* display: inline-block; */
+  /* margin: 0 0 0 1rem; */
+  /* padding: 5px; */
+  font-size: 20px;
+}
+
+nav p {
+  width: fit-content;
+  margin: 0;
+  font-weight: bold;
+  /* margin-right: 1em; */
 }
 
 .hide {
@@ -31,32 +65,40 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 80%;
+  width: 90%;
+  border-radius: 1em;
+  box-shadow: 0 0 2px ;
+  padding: 1em;
 }
 
 p {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   width: inherit;
-  line-height: 1.5;
+  max-width: 400px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.score-container {
-  margin: 0.75rem 0 1rem;
-  /* width: 50px; */
-}
-
-.start-page, .option-container, .end-page {
+.start-page,
+.option-container,
+.end-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: inherit;
   max-width: 500x;
-  /* background-color: #fff;
-  padding: 20px;
-  border-radius: 20px; */
 }
+
+.end-page {
+  padding: 10px 0;
+}
+
+.end-page h1 {
+  margin: 10px;
+}
+
 
 .option {
   display: flex;
@@ -70,23 +112,36 @@ p {
   width: 80%;
   max-width: 300px;
   border-radius: 5px;
-  padding: 5px;
-  margin: 0 0 10px;
-  background-color: lightblue;
+  font-size: 16px;
+  /* padding: 5px; */
+  height: 2.5rem;
+  margin: 0 0 20px;
+  background-color: var(--button-color);
+  color: #fff;
+  border-radius: 8px;
 }
 
 .next-btn {
   width: max-content;
   padding: 5px 20px;
+  /* margin-bottom: 0; */
 }
 
-#start-btn, #restart-btn, #end-btn {
+.end-page-buttons {
+  display: flex;
+}
+
+#start-btn,
+#restart-btn,
+#end-btn {
   width: max-content;
   padding: 5px 10px;
 }
 
-#restart-btn, #end-btn {
+#restart-btn,
+#end-btn {
   display: flex;
+  margin: 0 10px;
 }
 
 .correct {
@@ -101,4 +156,10 @@ p {
 
 .clicked {
   pointer-events: none;
+}
+
+@media (max-height: 400px) {
+  .question-container{
+    margin-top: 3rem;
+  } 
 }

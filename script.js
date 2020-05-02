@@ -5,7 +5,7 @@ const startBtn = document.getElementById("start-btn"),
   endPage = document.getElementById("end-page"),
   questionContainer = document.getElementById("question-container"),
   optionContainer = document.getElementById("option-container"),
-  scoreContainer = document.getElementById("score-container"),
+  navBar = document.getElementById("nav-bar"),
   scoreValue = document.getElementById("score");
 
 // array of questions
@@ -57,11 +57,14 @@ let currentScore = 0;
 
 // start game function
 function startGame() {
+  
+  optionContainer.classList.remove("clicked");
+  nextBtn.classList.remove("hide");
   !endPage.classList.contains("hide") ? endPage.classList.add("hide") : false;
   startPage.classList.add("hide");
   questionContainer.classList.remove("hide");
   optionContainer.classList.remove("hide");
-  scoreContainer.classList.remove("hide");
+  navBar.classList.remove("hide");
   currentScore = 0;
   scoreValue.innerText = currentScore;
   showQuestion();
@@ -100,7 +103,7 @@ function selectAnswer(e) {
     ? selectedAnswer.classList.add("correct")
     : selectedAnswer.classList.add("wrong"); */
   // console.log(selectedAnswer.classList);
-  nextBtn.classList.remove("hide");
+  // nextBtn.classList.remove("hide");
   showCorrect();
 }
 
@@ -122,7 +125,7 @@ function nextQuestion() {
   optionContainer.innerHTML = ``;
   counter++;
   showQuestion();
-  nextBtn.classList.add("hide");
+  // nextBtn.classList.add("hide");
   optionContainer.classList.remove("clicked");
 }
 
@@ -132,13 +135,15 @@ function endGame() {
   questionContainer.innerHTML = ``;
   optionContainer.innerHTML = ``;
   nextBtn.classList.add("hide");
-  scoreContainer.classList.add("hide");
+  // navBar.classList.add("hide");
   endPage.classList.remove("hide");
   endPage.innerHTML = `
-  <h4>Game Over!</h2>
-  <p>You scored ${currentScore}.</p>
+  <h1>Game Over!</h1>
+  <p>You scored ${currentScore}/5.</p>
+  <div class='end-page-buttons'>
   <button id="restart-btn" class="start-btn btn" onclick='startGame()'>Restart Game</button>
   <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>End Game</button>
+  </div>
   `;
 }
 
