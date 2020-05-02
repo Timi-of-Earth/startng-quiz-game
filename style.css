@@ -68,6 +68,7 @@ p {
 
 .btn {
   width: 80%;
+  max-width: 300px;
   border-radius: 5px;
   padding: 5px;
   margin: 0 0 10px;
@@ -79,9 +80,13 @@ p {
   padding: 5px 20px;
 }
 
-#restart-btn {
+#start-btn, #restart-btn, #end-btn {
   width: max-content;
   padding: 5px 10px;
+}
+
+#restart-btn, #end-btn {
+  display: flex;
 }
 
 .correct {
@@ -92,4 +97,8 @@ p {
 .wrong {
   background-color: rgb(110, 0, 0);
   color: #fff;
+}
+
+.clicked {
+  pointer-events: none;
 }

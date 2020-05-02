@@ -1,6 +1,6 @@
 const startBtn = document.getElementById("start-btn"),
   nextBtn = document.getElementById("next-btn"),
-  restartBtn = document.getElementById("restart-btn"),
+  // restartBtn = document.getElementById("restart-btn"),
   startPage = document.getElementById("start-page"),
   endPage = document.getElementById("end-page"),
   questionContainer = document.getElementById("question-container"),
@@ -89,6 +89,7 @@ function showQuestion() {
 // select answer
 function selectAnswer(e) {
   let selectedAnswer = e.target;
+  optionContainer.classList.add("clicked");
   if (selectedAnswer.innerText === data[counter].answer) {
     selectedAnswer.classList.add("correct");
     updateScore();
@@ -121,6 +122,8 @@ function nextQuestion() {
   optionContainer.innerHTML = ``;
   counter++;
   showQuestion();
+  nextBtn.classList.add("hide");
+  optionContainer.classList.remove("clicked");
 }
 
 // end game
@@ -131,17 +134,18 @@ function endGame() {
   nextBtn.classList.add("hide");
   scoreContainer.classList.add("hide");
   endPage.classList.remove("hide");
-  let finalMessage = document.createElement("p");
-  finalMessage.innerText = `Game Over!
-  You scored ${currentScore}.
+  endPage.innerHTML = `
+  <h4>Game Over!</h2>
+  <p>You scored ${currentScore}.</p>
+  <button id="restart-btn" class="start-btn btn" onclick='startGame()'>Restart Game</button>
+  <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>End Game</button>
   `;
-  endPage.prepend(finalMessage);
 }
 
 // event listeners
 startBtn.addEventListener("click", startGame);
 nextBtn.addEventListener("click", nextQuestion);
-restartBtn.addEventListener("click", startGame);
+// restartBtn.addEventListener("click", startGame);
 
 // @todo remove this
 // showQuestion();
