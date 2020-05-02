@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Quiz App</h1>
+      <div class="start-page" id="start-page">
+        <p>Welcome to the quiz!<br>
+          Instructions:<br>
+          Click an option to answer a question, each correct answer adds 1 point to your score.
+        </p>
+        <button id="start-btn" class="start-btn btn">Start Game</button>
+      </div>
+      
+      <div class="score-container hide" id="score-container">Score: <span id='score'>0</span></div>
+
+      <div class="question-container hide" id="question-container"></div>
+      <div class="option-container hide" id="option-container"></div>
+      
+      <button class="btn next-btn hide" id="next-btn">Next</button>
+      
+      <div class="end-page hide" id="end-page">
+        <button id="restart-btn" class="start-btn btn">Restart Game</button>
+      </div>
+  </div>
+
+  
+  
+</body>
+</html>
