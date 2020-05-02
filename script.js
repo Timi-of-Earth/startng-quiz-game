@@ -10,7 +10,7 @@ const startBtn = document.getElementById("start-btn"),
   scoreValue = document.getElementById("score");
 
 // array of questions
-const data = [
+let data = [
   {
     question: "Who invented the World Wide Web?",
     options: [
@@ -51,13 +51,71 @@ const data = [
     options: ["weather", "horoscopes", "space", "meteors"],
     answer: "weather",
   },
-].sort(() => Math.random() - 0.5);
+  {
+    question: "What's the Capital of Spain?",
+    options: ["Barcelona", "Grenada", "Seville", "Madrid"],
+    answer: "Madrid",
+  },
+  {
+    question: "Colombo is the largest city of which Asian country?",
+    options: ["India", "Sri Lanka", "Malaysia", "Thailand"],
+    answer: "Sri Lanka",
+  },
+  {
+    question:
+      "Bikini Bottom is the setting for which popular children’s cartoon",
+    options: [
+      "Tom and Jerry",
+      "The Jetsons",
+      "The Flinstones",
+      "SpongeBob SquarePants",
+    ],
+    answer: "SpongeBob SquarePants",
+  },
+  {
+    question: "Who is Sinzu Money?",
+    options: ["Spending!!!", "The President", "Ogun's biggest customer", "a Fraud in a turtleneck"],
+    answer: "Spending!!!",
+  },
+  {
+    question: "What is a cosmonaut?",
+    options: [
+      "a Canadian athlete",
+      "a Russian sailor",
+      "a Russian space explorer",
+      "a Chinese sailor",
+    ],
+    answer: "a Russian space explorer",
+  },
+  {
+    question: "What was Buzz Aldrin's mother's maiden name?",
+    options: ["Moon", "June", "Jupiter", "Mark"],
+    answer: "Moon",
+  },
+  /*{
+    question: "?",
+    options: ["", "", "", ""],
+    answer: "",
+  },
+  {
+    question: "?",
+    options: ["", "", "", ""],
+    answer: "",
+  }, */
+  /* {
+    question: "?",
+    options: ["", "", "", ""],
+    answer: "",
+  }, */
+];
 
 let counter = 0;
 let currentScore = 0;
 
 // start game function
 function startGame() {
+  //shuffle data array
+  data = data.sort(() => Math.random() - 0.5);
   optionContainer.classList.remove("clicked");
   nextBtn.classList.remove("hide");
   !endPage.classList.contains("hide") ? endPage.classList.add("hide") : false;
@@ -94,13 +152,17 @@ function showQuestion() {
 function selectAnswer(e) {
   let selectedAnswer = e.target;
   optionContainer.classList.add("clicked");
+  // check the selected answer
   if (selectedAnswer.innerText === data[counter].answer) {
+    // when selected answer is correct
     selectedAnswer.classList.add("correct");
     updateScore();
   } else {
+    //when wrong
     selectedAnswer.classList.add("wrong");
   }
-  /* selectedAnswer.innerText === data[counter].answer
+  /* 
+  selectedAnswer.innerText === data[counter].answer
     ? selectedAnswer.classList.add("correct")
     : selectedAnswer.classList.add("wrong"); */
   // console.log(selectedAnswer.classList);
@@ -108,7 +170,7 @@ function selectAnswer(e) {
   showCorrect();
 }
 
-// show correct answer and next btn @todo next btn
+// show correct answer and next btn
 function showCorrect() {
   let options = Array.from(document.getElementsByClassName("option"));
   // console.log(options);
@@ -152,6 +214,3 @@ function endGame() {
 startBtn.addEventListener("click", startGame);
 nextBtn.addEventListener("click", nextQuestion);
 // restartBtn.addEventListener("click", startGame);
-
-// @todo remove this
-// showQuestion();
