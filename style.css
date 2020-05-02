@@ -12,27 +12,22 @@
   --navbar-color: hsl(256, 44%, 43%);
 }
 
-html {
-  margin: 0;
-}
-
 body {
   height: 100vh;
   width: 100vw;
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* position: relative; */
+  position: relative;
 }
 
 nav {
   position: absolute;
   top: 0;
   left: 0;
-  width: inherit;
-  height: 2.5rem;
+  width: 100%;
+  height: 40px;
   padding: 0 1rem;
   background-color: var(--navbar-color);
   color: #fff;
@@ -43,7 +38,6 @@ nav {
 }
 
 nav h4 {
-  margin: 0;
   font-weight: bold;
 }
 
@@ -117,6 +111,10 @@ p {
   border: none;
 }
 
+.start-btn {
+  margin: 1rem 0 0;
+}
+
 .next-btn {
   width: max-content;
   padding: 5px 20px;
@@ -156,10 +154,17 @@ p {
 
 @media (max-height: 400px) {
   body {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   p.score-container {
-    margin: 56px 0 16px;
+    margin: 200px 0 16px;
+  }
+  .container {
+    margin: 0 0 16px;
   }
 }
