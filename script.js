@@ -63,11 +63,11 @@ let data = [
   },
   {
     question:
-      "Bikini Bottom is the setting for which popular children’s cartoon",
+      "Bikini Bottom is the setting for which popular children’s cartoon?",
     options: [
       "Tom and Jerry",
       "The Jetsons",
-      "The Flinstones",
+      "The Flintstones",
       "SpongeBob SquarePants",
     ],
     answer: "SpongeBob SquarePants",
